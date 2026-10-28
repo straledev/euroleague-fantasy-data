@@ -1,0 +1,37 @@
+name: Update EuroLeague box score data
+
+on:
+  schedule:
+    - cron: "37 6 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+
+      - name: Install dependencies
+        run: pip install euroleague-api pandas
+
+      - name: Collect current season
+        run: python collector.py --season 2026
+
+      - name: Commit if data changed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add data/
+          if git diff --cached --quiet; then
+            echo "Nema novih podataka."
+          else
+            git commit -m "Auto-update box score data $(date -u +'%Y-%m-%d')"
+            git push
+          fi
