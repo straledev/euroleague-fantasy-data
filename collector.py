@@ -1,20 +1,3 @@
-"""
-EuroLeague Fantasy dataset – collector (faza 1: statistika iz zvaničnog EuroLeague API-ja)
-
-Pokretanje:
-    pip install euroleague-api pandas
-    python collector.py --season 2026
-    python collector.py --season 2025 --season 2024   # više sezona
-
-Rezultat (po uzoru na vaastav/Fantasy-Premier-League):
-    data/2026-27/rounds/round_<n>.csv     # svi igrači u jednom kolu
-    data/2026-27/rounds/merged_rounds.csv # sva kola u jednom fajlu
-    data/2026-27/players/<ime>/rounds.csv # kolo-po-kolo za jednog igrača
-    data/2026-27/cleaned_players.csv      # sezonski prosek po igraču
-
-NAPOMENA: nazivi kolona zavise od verzije paketa/API-ja. Pokreni jednom,
-odštampaj df.columns i po potrebi ispravi COL mapu ispod.
-"""
 import argparse
 import re
 from pathlib import Path
@@ -22,9 +5,8 @@ from pathlib import Path
 import pandas as pd
 from euroleague_api.boxscore_data import BoxScoreData
 
-COMPETITION = "E"  # "E" = EuroLeague, "U" = EuroCup
+COMPETITION = "E"
 
-# Mapiranje kolona iz API-ja -> naše ime. Proveri posle prvog pokretanja!
 COL = {
     "Season": "season",
     "Phase": "phase",
@@ -68,7 +50,6 @@ def slug(name: str) -> str:
 
 
 def minutes_to_float(m) -> float:
-    """'25:34' -> 25.57; 'DNP' ili prazno -> 0."""
     if isinstance(m, str) and ":" in m:
         mm, ss = m.split(":")[:2]
         return int(mm) + int(ss) / 60
@@ -79,8 +60,6 @@ def minutes_to_float(m) -> float:
 
 
 def compute_pir(df: pd.DataFrame) -> pd.Series:
-    """PIR = (PTS+REB+AST+STL+BLK+FD) - (promašaji iz igre + promašena SB + TOV + blokirani šutevi + PF).
-    Služi kao provera kolone 'Valuation' iz API-ja."""
     missed_fg = (df.fg2a - df.fg2m) + (df.fg3a - df.fg3m)
     missed_ft = df.fta - df.ftm
     plus = df.pts + df.reb + df.ast + df.stl + df.blk + df.fd
@@ -94,11 +73,9 @@ def collect(season: int, out_dir: Path) -> None:
 
     df = raw.rename(columns=COL)
     df = df[[c for c in COL.values() if c in df.columns]]
-    # očisti razmake u tekstualnim kolonama (Player_ID dolazi kao "P014094   ")
     for c in ["player_id", "player", "team", "phase"]:
         if c in df.columns:
             df[c] = df[c].astype(str).str.strip()
-    # izbaci redove za ukupno tima
     df = df[~df["player_id"].str.upper().isin(["TOTAL", "TEAM", ""])].copy()
     df["minutes"] = df["minutes"].apply(minutes_to_float)
 
