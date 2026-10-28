@@ -1,0 +1,4 @@
+season,phase,round,game_code,player_id,player,team,home,starter,minutes,pts,fg2m,fg2a,fg3m,fg3a,ftm,fta,oreb,dreb,reb,ast,stl,tov,blk,blk_against,pf,fd,pir,plus_minus,pir_calc
+2026,RS,3,29,P005942,"DANGUBIC, NEMANJA",DUB,0,0.0,13.216666666666667,2,1,1,0,0,0,0,1,1,2,0,0,1,0,0,2,0,1,-8.0,1
+2026,RS,4,37,P005942,"DANGUBIC, NEMANJA",DUB,1,0.0,5.466666666666667,0,0,1,0,1,0,0,0,0,0,0,1,0,0,0,0,0,-1,-8.0,-1
+2026,RS,7,65,P005942,"DANGUBIC, NEMANJA",DUB,0,0.0,0.0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0.0,0

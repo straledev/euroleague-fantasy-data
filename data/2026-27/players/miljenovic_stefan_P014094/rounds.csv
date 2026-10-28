@@ -1,0 +1,4 @@
+season,phase,round,game_code,player_id,player,team,home,starter,minutes,pts,fg2m,fg2a,fg3m,fg3a,ftm,fta,oreb,dreb,reb,ast,stl,tov,blk,blk_against,pf,fd,pir,plus_minus,pir_calc
+2026,RS,1,1,P014094,"MILJENOVIC, STEFAN",RED,1,0.0,0.3333333333333333,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,-1,0.0,-1
+2026,RS,2,12,P014094,"MILJENOVIC, STEFAN",RED,1,0.0,5.45,3,0,1,1,1,0,0,0,0,0,0,0,1,0,1,2,1,-1,4.0,-1
+2026,RS,3,21,P014094,"MILJENOVIC, STEFAN",RED,1,0.0,3.0833333333333335,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,2,2.0,2

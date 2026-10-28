@@ -1,0 +1,4 @@
+season,phase,round,game_code,player_id,player,team,home,starter,minutes,pts,fg2m,fg2a,fg3m,fg3a,ftm,fta,oreb,dreb,reb,ast,stl,tov,blk,blk_against,pf,fd,pir,plus_minus,pir_calc
+2026,RS,1,2,P009005,"DECK, GABRIEL",MAD,0,0.0,16.5,0,0,0,0,2,0,0,0,1,1,0,0,1,0,0,1,1,-2,2.0,-2
+2026,RS,2,11,P009005,"DECK, GABRIEL",MAD,0,1.0,21.883333333333333,2,1,1,0,0,0,0,0,3,3,1,0,1,0,0,2,0,3,-2.0,3
+2026,RS,3,22,P009005,"DECK, GABRIEL",MAD,0,0.0,12.916666666666666,1,0,0,0,1,1,2,0,0,0,0,0,1,0,0,3,1,-4,-15.0,-4

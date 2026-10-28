@@ -1,0 +1,6 @@
+season,phase,round,game_code,player_id,player,team,home,starter,minutes,pts,fg2m,fg2a,fg3m,fg3a,ftm,fta,oreb,dreb,reb,ast,stl,tov,blk,blk_against,pf,fd,pir,plus_minus,pir_calc
+2026,RS,4,39,P015141,"EVBUOMWAN, TOSAN",BAR,1,0.0,20.733333333333334,8,4,5,0,0,0,2,0,3,3,1,1,0,0,0,0,1,11,-4.0,11
+2026,RS,5,44,P015141,"EVBUOMWAN, TOSAN",BAR,1,0.0,13.816666666666666,6,2,4,0,1,2,2,1,4,5,0,0,1,0,0,1,1,7,-1.0,7
+2026,RS,6,58,P015141,"EVBUOMWAN, TOSAN",BAR,1,1.0,15.616666666666667,4,2,6,0,2,0,2,4,3,7,1,0,1,0,2,1,2,2,-4.0,2
+2026,RS,7,63,P015141,"EVBUOMWAN, TOSAN",BAR,0,0.0,3.5,0,0,0,0,1,0,0,0,1,1,0,0,3,0,0,2,1,-4,0.0,-4
+2026,RS,8,74,P015141,"EVBUOMWAN, TOSAN",BAR,0,0.0,22.55,5,2,3,0,0,1,5,2,0,2,0,1,1,1,0,1,3,5,14.0,5

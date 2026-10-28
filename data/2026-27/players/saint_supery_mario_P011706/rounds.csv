@@ -1,0 +1,6 @@
+season,phase,round,game_code,player_id,player,team,home,starter,minutes,pts,fg2m,fg2a,fg3m,fg3a,ftm,fta,oreb,dreb,reb,ast,stl,tov,blk,blk_against,pf,fd,pir,plus_minus,pir_calc
+2026,RS,1,8,P011706,"SAINT-SUPERY, MARIO",PAM,0,1.0,16.433333333333334,7,1,2,1,2,2,2,0,1,1,3,2,3,0,0,2,4,10,9.0,10
+2026,RS,2,15,P011706,"SAINT-SUPERY, MARIO",PAM,1,1.0,16.45,3,0,3,1,3,0,0,1,1,2,0,0,1,0,0,2,1,-2,5.0,-2
+2026,RS,3,26,P011706,"SAINT-SUPERY, MARIO",PAM,0,1.0,14.0,0,0,1,0,3,0,0,1,1,2,3,0,1,0,1,1,1,-1,0.0,-1
+2026,RS,5,45,P011706,"SAINT-SUPERY, MARIO",PAM,1,0.0,6.633333333333333,0,0,1,0,1,0,0,0,1,1,1,0,0,0,0,4,1,-3,-7.0,-3
+2026,RS,7,69,P011706,"SAINT-SUPERY, MARIO",PAM,0,0.0,6.75,3,0,0,1,2,0,0,0,1,1,0,0,1,0,0,1,0,1,2.0,1
