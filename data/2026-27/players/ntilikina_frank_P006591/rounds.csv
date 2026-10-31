@@ -1,3 +1,2 @@
 season,phase,round,game_code,player_id,player,team,home,starter,minutes,pts,fg2m,fg2a,fg3m,fg3a,ftm,fta,oreb,dreb,reb,ast,stl,tov,blk,blk_against,pf,fd,pir,plus_minus,pir_calc
 2026,RS,2,18,P006591,"NTILIKINA, FRANK",PRS,1,0.0,10.05,3,0,1,1,3,0,0,0,2,2,0,1,1,0,0,3,0,-1,-9.0,-1
-2026,RS,9,82,P006591,"NTILIKINA, FRANK",PRS,0,0.0,8.383333333333333,0,0,0,0,3,0,0,0,0,0,1,0,1,0,0,1,0,-4,-8.0,-4
