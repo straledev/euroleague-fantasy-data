@@ -231,6 +231,25 @@ def write_outputs(df: pd.DataFrame, base: Path) -> None:
 
 # ---------------------------------------------------------------- season
 
+def rounds_complete(played: pd.DataFrame, ok_codes: set, data: pd.DataFrame) -> list:
+    """Kola u kojima su odigrane i proverene SVE utakmice.
+
+    Raspored sadrzi samo odigrane utakmice, pa kolo u toku inace izgleda zavrseno.
+    Zato kolo regularnog dela mora imati i pun broj utakmica (broj timova / 2).
+    """
+    full_round = data["team"].nunique() // 2 if not data.empty else 0
+    out = []
+    for (phase, rnd), g in played.sort_values("game_code").groupby(["phase", "round"], sort=False):
+        codes = set(g["game_code"].astype(int))
+        if not codes <= ok_codes:
+            continue
+        if phase == "RS":
+            if len(codes) == full_round:
+                out.append(int(rnd))
+        else:
+            out.append(f"{phase} {int(rnd)}")
+    return out
+
 def collect(season: int, out_dir: Path, api: BoxScoreData | None = None) -> bool:
     """Vraca True ako dataset sadrzi sve odigrane utakmice."""
     api = api or BoxScoreData(COMPETITION)
@@ -289,11 +308,7 @@ def collect(season: int, out_dir: Path, api: BoxScoreData | None = None) -> bool
         "played_games": int(len(played)),
         "stored_games": len(stored),
         "verified_games": len(ok_codes),
-        "rounds_complete": [
-            f"{p} {int(r)}" if p != "RS" else int(r)
-            for (p, r), g in played.groupby(["phase", "round"], sort=False)
-            if set(g["game_code"].astype(int)) <= ok_codes
-        ],
+        "rounds_complete": rounds_complete(played, ok_codes, data),
         "missing_or_unverified": missing,
     }
     (base / "collection_status.json").write_text(json.dumps(status, indent=2), encoding="utf-8")
