@@ -13,6 +13,7 @@ import time
 from datetime import datetime, timezone
 from pathlib import Path
 
+import numpy as np
 import pandas as pd
 import xmltodict
 from euroleague_api.boxscore_data import BoxScoreData
@@ -56,6 +57,8 @@ COL = {
 }
 TEXT_COLS = {"season", "phase", "player_id", "player", "team", "minutes"}
 OUT_COLS = list(COL.values()) + ["pir_calc"]
+CONTEXT_COLS = ["opponent", "team_score", "opp_score", "win", "fpt_est"]
+WIN_BONUS = 0.10
 
 
 def season_label(season: int) -> str:
@@ -86,8 +89,8 @@ def compute_pir(df: pd.DataFrame) -> pd.Series:
 
 # ---------------------------------------------------------------- schedule
 
-def get_schedule(api: BoxScoreData, season: int) -> pd.DataFrame:
-    """Raspored sezone sa konacnim rezultatima.
+def get_schedule(api: BoxScoreData, season: int) -> tuple[pd.DataFrame, pd.DataFrame]:
+    """Raspored sezone sa konacnim rezultatima: (nase kolone, ceo odgovor API-ja).
 
     Citamo ga sami: biblioteka `played` pretvara u bool preko astype(bool),
     pa i tekst "false" postaje True i ne odigrane utakmice izgledaju odigrano.
@@ -95,6 +98,8 @@ def get_schedule(api: BoxScoreData, season: int) -> pd.DataFrame:
     r = get_requests(api.url_v1, params={"seasonCode": f"{COMPETITION}{season}"})
     games = xmltodict.parse(r.content)["results"]["game"]
     df = pd.DataFrame(games if isinstance(games, list) else [games])
+    df = df.apply(lambda col: col.map(lambda v: json.dumps(v, ensure_ascii=False)
+                                      if isinstance(v, (dict, list)) else v))
     df = df.rename(columns={
         "gamenumber": "game_code", "round": "phase", "gameday": "round",
         "homescore": "home_score", "awayscore": "away_score",
@@ -102,7 +107,9 @@ def get_schedule(api: BoxScoreData, season: int) -> pd.DataFrame:
     df["played"] = df["played"].astype(str).str.strip().str.lower().eq("true")
     for c in ["game_code", "round", "home_score", "away_score"]:
         df[c] = pd.to_numeric(df[c], errors="coerce")
-    return df[["game_code", "phase", "round", "played", "home_score", "away_score"]]
+    core = ["game_code", "phase", "round", "played", "home_score", "away_score"]
+    full = df[core + [c for c in df.columns if c not in core]].sort_values("game_code")
+    return df[core], full
 
 
 # ---------------------------------------------------------------- one game
@@ -164,9 +171,29 @@ def fetch_game(api: BoxScoreData, season: int, game) -> pd.DataFrame | None:
     return None
 
 
+# ---------------------------------------------------------------- context
+
+def add_game_context(df: pd.DataFrame) -> pd.DataFrame:
+    """Protivnik, rezultat, pobeda i procena fantasy poena za svaki red."""
+    df = df.drop(columns=[c for c in CONTEXT_COLS if c in df.columns])
+    score = (df.groupby(["game_code", "team"], as_index=False)["pts"].sum()
+               .rename(columns={"pts": "team_score"}))
+    opp = score.rename(columns={"team": "opponent", "team_score": "opp_score"})
+    ctx = score.merge(opp, on="game_code")
+    ctx = ctx[ctx["team"] != ctx["opponent"]]
+    df = df.merge(ctx, on=["game_code", "team"], how="left")
+    df["win"] = (df["team_score"] > df["opp_score"]).astype(int)
+    df["fpt_est"] = (df["pir"] * np.where(df["win"] == 1, 1 + WIN_BONUS, 1.0)).round(1)
+    first = list(COL.values())
+    first.insert(first.index("team") + 1, "opponent")
+    order = first + ["team_score", "opp_score", "win", "pir_calc", "fpt_est"]
+    return df[[c for c in order if c in df.columns]]
+
+
 # ---------------------------------------------------------------- outputs
 
 def write_outputs(df: pd.DataFrame, base: Path) -> None:
+    df = add_game_context(df)
     rounds_dir = base / "rounds"
     players_dir = base / "players"
     rounds_dir.mkdir(parents=True, exist_ok=True)
@@ -207,7 +234,9 @@ def collect(season: int, out_dir: Path, api: BoxScoreData | None = None) -> bool
     merged_path = base / "rounds" / "merged_rounds.csv"
     print(f"Sezona {season_label(season)}")
 
-    schedule = get_schedule(api, season)
+    schedule, schedule_full = get_schedule(api, season)
+    base.mkdir(parents=True, exist_ok=True)
+    schedule_full.to_csv(base / "schedule.csv", index=False)
     played = schedule[schedule["played"]]
 
     if merged_path.exists():
@@ -246,7 +275,7 @@ def collect(season: int, out_dir: Path, api: BoxScoreData | None = None) -> bool
     ok_codes = have | fresh_codes
     missing = sorted(set(played["game_code"].astype(int)) - ok_codes)
 
-    if fresh or not merged_path.exists():
+    if fresh or not merged_path.exists() or "opponent" not in existing.columns:
         write_outputs(data, base)
 
     status = {
@@ -260,7 +289,6 @@ def collect(season: int, out_dir: Path, api: BoxScoreData | None = None) -> bool
         ),
         "missing_or_unverified": missing,
     }
-    base.mkdir(parents=True, exist_ok=True)
     (base / "collection_status.json").write_text(json.dumps(status, indent=2), encoding="utf-8")
 
     print(f"  Sacuvano utakmica: {len(stored)} od {len(played)} odigranih, "

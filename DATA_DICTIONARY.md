@@ -15,6 +15,8 @@ Column reference for every file in `data/<season>/`.
 
 **One row =** one player in one game. Players who were on the roster but did not play are included with `minutes = 0`. Team total rows are removed.
 
+**Accuracy:** a game is saved only when its players' points add up exactly to the official final score, both teams are present, no player appears twice and `pir` equals `pir_calc`. Games that fail the check are retried on the next run.
+
 | Column | Type | Description |
 |---|---|---|
 | `season` | int | Start year of the season (`2026` = 2026-27) |
@@ -24,6 +26,7 @@ Column reference for every file in `data/<season>/`.
 | `player_id` | str | EuroLeague player ID, e.g. `P003469`. Stable across seasons |
 | `player` | str | Player name as `LASTNAME, FIRSTNAME` |
 | `team` | str | EuroLeague team code (e.g. `OLY`, `MAD`, `PAN`) |
+| `opponent` | str | EuroLeague code of the opposing team in this game |
 | `home` | int | `1` home team, `0` away team |
 | `starter` | int | `1` started the game, `0` came off the bench |
 | `minutes` | float | Minutes played in decimal form (`25:30` → `25.5`) |
@@ -41,7 +44,11 @@ Column reference for every file in `data/<season>/`.
 | `fd` | int | Fouls drawn |
 | `pir` | int | Performance Index Rating, as reported by the API (`Valuation`) |
 | `plus_minus` | float | Point differential while on court |
-| `pir_calc` | int | PIR recomputed from the columns above. Used as a check and should always equal `pir` |
+| `team_score` | int | Points scored by the player's team in this game |
+| `opp_score` | int | Points scored by the opponent in this game |
+| `win` | int | `1` if the player's team won, `0` if it lost |
+| `pir_calc` | int | PIR recomputed from the columns above. Used as a check and always equals `pir` |
+| `fpt_est` | float | **Estimated** fantasy points: `pir × 1.1` when the team won, otherwise `pir`, following the EuroLeague Fantasy Challenge win bonus. Not an official per-game value; season averages of `fpt_est` are within 0.15 of the game's own FPT for most players |
 
 **PIR formula:**
 
@@ -52,7 +59,43 @@ PIR = (pts + reb + ast + stl + blk + fd)
 
 ---
 
-## 2. Season summary
+## 2. Schedule
+
+**File:** `schedule.csv`
+
+**Source:** official EuroLeague API (season results feed). Written by `collector.py` on every run.
+
+**One row =** one game of the season, played or not.
+
+| Column | Type | Description |
+|---|---|---|
+| `game_code` | int | Game ID within the season, same as in the box score files |
+| `phase` | str | Competition phase (`RS`, `PI`, `PO`, `FF`) |
+| `round` | int | Round number |
+| `played` | bool | `True` once the game is finished |
+| `home_score` / `away_score` | int | Final score (`0` for games not yet played) |
+| *other columns* | | Every other field the API returns for the game (teams, date, venue...), kept as delivered |
+
+---
+
+## 3. Collection status
+
+**File:** `collection_status.json`
+
+Written on every run, so you can see at a glance whether the dataset is complete.
+
+| Field | Description |
+|---|---|
+| `updated_utc` | When the collector last ran |
+| `played_games` | Games the schedule marks as played |
+| `stored_games` | Games in `merged_rounds.csv` |
+| `verified_games` | Stored games that passed the final-score check |
+| `rounds_complete` | Rounds where every game is stored and verified |
+| `missing_or_unverified` | `game_code`s still missing; empty when the dataset is complete |
+
+---
+
+## 4. Season summary
 
 **File:** `cleaned_players.csv`
 
@@ -76,7 +119,7 @@ Averages based on few games are unreliable, so filter on `games` before ranking.
 
 ---
 
-## 3. Fantasy files
+## 5. Fantasy files
 
 **Files:**
 - `fantasy/players_latest.csv`: most recent snapshot
