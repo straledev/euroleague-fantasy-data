@@ -2,7 +2,7 @@ name: Update EuroLeague box score data
 
 on:
   schedule:
-    - cron: "37 6 * * *"
+    - cron: "37 6 * * *"   # svaki dan u 06:37 UTC
   workflow_dispatch:
 
 permissions:
@@ -26,8 +26,14 @@ jobs:
 
       - name: Collect current season
         id: collect
-        continue-on-error: true
+        continue-on-error: true   # i nepotpun rezultat se cuva, ali posao na kraju pada
         run: python collector.py --season 2026
+
+      - name: Link players to fantasy positions
+        id: merge
+        if: always()
+        continue-on-error: true
+        run: python merger.py --season 2026
 
       - name: Commit if data changed
         run: |
@@ -46,4 +52,10 @@ jobs:
         run: |
           echo "Neke odigrane utakmice nisu preuzete ili nisu prosle proveru."
           cat data/2026-27/collection_status.json
+          exit 1
+
+      - name: Fail if positions are missing
+        if: steps.merge.outcome == 'failure'
+        run: |
+          echo "Manje od 99% odigranih minuta ima poziciju. Dodaj igrace u config/player_overrides.csv."
           exit 1

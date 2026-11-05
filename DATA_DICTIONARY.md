@@ -175,9 +175,11 @@ Averages based on few games are unreliable, so filter on `games` before ranking.
 
 ---
 
-## Joining the two sources
+## 6. Player map (joining the two sources)
 
-The box score and fantasy files do not share an ID. To join them you need to match:
+**File:** `player_map.csv`
+
+The box score and fantasy files share no ID, and use different name formats and partly different team codes:
 
 | | Box score | Fantasy |
 |---|---|---|
@@ -185,4 +187,32 @@ The box score and fantasy files do not share an ID. To join them you need to mat
 | Name | `VEZENKOV, SASHA` | `S. Vezenkov` |
 | Team | `MAD`, `IST`, `PAM`... | `RMB`, `EFS`, `VBC`... |
 
-A merge script (`merger.py`) that builds this mapping is planned. See the roadmap in the [README](README.md).
+`merger.py` links them: it maps the 20 team codes, then matches each box-score player to a fantasy player of the same team by last name (accents and suffixes such as *Jr.* or *III* removed) and first initial. Only unambiguous matches are kept. A player not found in his team (for example after a transfer) is matched league-wide only if the name is a unique, exact match. Players that still cannot be matched can be added by hand in `config/player_overrides.csv`.
+
+**One row =** one box-score player for one team, with at least one minute played this season.
+
+| Column | Type | Description |
+|---|---|---|
+| `player_id` | str | EuroLeague player ID, as in the box score files |
+| `player` | str | Name as in the box score files |
+| `team` | str | EuroLeague team code |
+| `dunkest_id` | int | Fantasy game ID. Empty when the player is not in any fantasy snapshot |
+| `fantasy_name` / `fantasy_team` | str | Name and team code as shown in the fantasy game |
+| `position` | str | `Guard`, `Forward` or `Center`, from the fantasy game |
+| `match_method` | str | `team_and_name`, `name_only`, `manual` (from the overrides file) or `unmatched` |
+| `games` / `minutes` | int / float | Games and minutes played, to judge how much an unmatched player matters |
+
+The daily update fails, and sends a notification, when less than 99% of minutes played have a position.
+
+**Example: add positions to the box score**
+
+```python
+import pandas as pd
+
+base = "https://raw.githubusercontent.com/straledev/euroleague-fantasy-data/main/data/2026-27"
+
+games = pd.read_csv(f"{base}/rounds/merged_rounds.csv")
+pmap = pd.read_csv(f"{base}/player_map.csv")
+games = games.merge(pmap[["player_id", "team", "position", "dunkest_id"]],
+                    on=["player_id", "team"], how="left")
+```
