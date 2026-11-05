@@ -11,23 +11,28 @@ permissions:
 jobs:
   update:
     runs-on: ubuntu-latest
+    timeout-minutes: 30
+
     steps:
       - uses: actions/checkout@v5
 
       - uses: actions/setup-python@v6
         with:
           python-version: "3.13"
+          cache: pip
 
       - name: Install dependencies
-        run: pip install euroleague-api pandas
+        run: pip install -r requirements.txt
 
       - name: Collect current season
+        id: collect
+        continue-on-error: true
         run: python collector.py --season 2026
 
       - name: Commit if data changed
         run: |
           git config user.name "github-actions[bot]"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add data/
           if git diff --cached --quiet; then
             echo "Nema novih podataka."
@@ -35,3 +40,10 @@ jobs:
             git commit -m "Auto-update box score data $(date -u +'%Y-%m-%d')"
             git push
           fi
+
+      - name: Fail if games are missing
+        if: steps.collect.outcome == 'failure'
+        run: |
+          echo "Neke odigrane utakmice nisu preuzete ili nisu prosle proveru."
+          cat data/2026-27/collection_status.json
+          exit 1
