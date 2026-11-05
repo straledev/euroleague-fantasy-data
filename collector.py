@@ -20,9 +20,9 @@ from euroleague_api.boxscore_data import BoxScoreData
 from euroleague_api.utils import get_requests
 
 COMPETITION = "E"
-MAX_TRIES = 4
-FIRST_WAIT = 5
-PAUSE = 1.0
+MAX_TRIES = 4          # pokusaja po utakmici
+FIRST_WAIT = 5         # sekundi pre drugog pokusaja (5, 15, 45)
+PAUSE = 1.0            # pauza izmedju utakmica, da API ne uspori zahteve
 
 COL = {
     "Season": "season",
@@ -58,7 +58,7 @@ COL = {
 TEXT_COLS = {"season", "phase", "player_id", "player", "team", "minutes"}
 OUT_COLS = list(COL.values()) + ["pir_calc"]
 CONTEXT_COLS = ["opponent", "team_score", "opp_score", "win", "fpt_est"]
-WIN_BONUS = 0.10
+WIN_BONUS = 0.10       # EuroLeague Fantasy: +10% poena kad tim pobedi
 
 
 def season_label(season: int) -> str:
@@ -98,6 +98,7 @@ def get_schedule(api: BoxScoreData, season: int) -> tuple[pd.DataFrame, pd.DataF
     r = get_requests(api.url_v1, params={"seasonCode": f"{COMPETITION}{season}"})
     games = xmltodict.parse(r.content)["results"]["game"]
     df = pd.DataFrame(games if isinstance(games, list) else [games])
+    # polja sa XML atributima stizu kao recnici; cuvamo ih kao tekst
     df = df.apply(lambda col: col.map(lambda v: json.dumps(v, ensure_ascii=False)
                                       if isinstance(v, (dict, list)) else v))
     df = df.rename(columns={
@@ -162,7 +163,7 @@ def fetch_game(api: BoxScoreData, season: int, game) -> pd.DataFrame | None:
             if not problems:
                 return df
             reason = "; ".join(problems)
-        except Exception as e:
+        except Exception as e:  # mreza, prazan odgovor, los JSON...
             reason = f"{type(e).__name__}: {e}"
         print(f"    utakmica {int(game.game_code)}, pokusaj {attempt}/{MAX_TRIES}: {reason}")
         if attempt < MAX_TRIES:
@@ -199,13 +200,16 @@ def write_outputs(df: pd.DataFrame, base: Path) -> None:
     rounds_dir.mkdir(parents=True, exist_ok=True)
     players_dir.mkdir(parents=True, exist_ok=True)
 
-    df = df.sort_values(["round", "game_code", "team", "player"])
+    df = df.sort_values(["game_code", "team", "player"])
     df.to_csv(rounds_dir / "merged_rounds.csv", index=False)
 
-    for old in rounds_dir.glob("round_*.csv"):
+    # fajlovi po kolu uvek iz celog skupa, da nijedan ne ostane zastareo
+    for old in rounds_dir.glob("*round_*.csv"):
         old.unlink()
-    for rnd, g in df.groupby("round"):
-        g.to_csv(rounds_dir / f"round_{int(rnd)}.csv", index=False)
+    for (phase, rnd), g in df.groupby(["phase", "round"]):
+        # regularni deo: round_5.csv; doigravanje i plej-of: po_round_2.csv, ff_round_1.csv...
+        prefix = "" if phase == "RS" else f"{str(phase).lower()}_"
+        g.to_csv(rounds_dir / f"{prefix}round_{int(rnd)}.csv", index=False)
 
     for (pid, name), g in df.groupby(["player_id", "player"]):
         p_dir = players_dir / f"{slug(name)}_{pid}"
@@ -244,6 +248,7 @@ def collect(season: int, out_dir: Path, api: BoxScoreData | None = None) -> bool
     else:
         existing = pd.DataFrame(columns=OUT_COLS)
 
+    # postojece utakmice proveravamo prema zvanicnom rezultatu
     have, bad = set(), set()
     for game in played.itertuples():
         g = existing[existing["game_code"] == game.game_code]
@@ -267,6 +272,7 @@ def collect(season: int, out_dir: Path, api: BoxScoreData | None = None) -> bool
         time.sleep(PAUSE)
 
     fresh_codes = {int(c) for df in fresh for c in df["game_code"].unique()}
+    # stara verzija utakmice ostaje dok ne stigne ispravna nova
     kept = existing[~existing["game_code"].isin(fresh_codes)]
     data = pd.concat([kept, *fresh], ignore_index=True) if fresh else kept
     data = data[[c for c in OUT_COLS if c in data.columns]]
@@ -283,10 +289,11 @@ def collect(season: int, out_dir: Path, api: BoxScoreData | None = None) -> bool
         "played_games": int(len(played)),
         "stored_games": len(stored),
         "verified_games": len(ok_codes),
-        "rounds_complete": sorted(
-            int(r) for r, g in played.groupby("round")
+        "rounds_complete": [
+            f"{p} {int(r)}" if p != "RS" else int(r)
+            for (p, r), g in played.groupby(["phase", "round"], sort=False)
             if set(g["game_code"].astype(int)) <= ok_codes
-        ),
+        ],
         "missing_or_unverified": missing,
     }
     (base / "collection_status.json").write_text(json.dumps(status, indent=2), encoding="utf-8")

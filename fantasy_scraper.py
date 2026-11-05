@@ -15,7 +15,7 @@ PER_PAGE = 25
 PAUSE_SEC = 1.0
 
 HEADERS = {
-    "User-Agent": "euroleague-fantasy-data (github.com/<tvoj-username>/euroleague-fantasy-data)",
+    "User-Agent": "euroleague-fantasy-data (github.com/straledev/euroleague-fantasy-data)",
     "Accept": "application/json",
 }
 
@@ -36,6 +36,8 @@ RENAME = {
     "loss_ot": "coach_loss_ot",
 }
 TEXT_COLS = {"player", "position", "team"}
+# kolone po kojima prepoznajemo da se nesto promenilo od poslednjeg snimka
+CHANGE_COLS = ["dunkest_id", "position", "team", "credits", "fpt"]
 
 
 def load_token() -> str:
@@ -108,10 +110,24 @@ def scrape(stats_type: str) -> pd.DataFrame:
     return df
 
 
+def unchanged(df: pd.DataFrame, latest: Path) -> bool:
+    """True ako su cene, poeni, pozicije i timovi isti kao u poslednjem snimku."""
+    if not latest.exists():
+        return False
+    old = pd.read_csv(latest)
+    if not set(CHANGE_COLS) <= set(old.columns):
+        return False
+    a = df[CHANGE_COLS].sort_values("dunkest_id").reset_index(drop=True)
+    b = old[CHANGE_COLS].sort_values("dunkest_id").reset_index(drop=True)
+    return a.astype(str).equals(b.astype(str))
+
+
 if __name__ == "__main__":
     ap = argparse.ArgumentParser()
     ap.add_argument("--stats-type", choices=["avg", "tot"], default="avg")
     ap.add_argument("--out", default="data")
+    ap.add_argument("--force", action="store_true",
+                    help="sacuvaj snimak i kad se nista nije promenilo")
     args = ap.parse_args()
 
     now = datetime.now(timezone.utc)
@@ -122,6 +138,9 @@ if __name__ == "__main__":
     base = Path(args.out) / SEASON_LABEL / "fantasy"
     (base / "snapshots").mkdir(parents=True, exist_ok=True)
     suffix = "" if args.stats_type == "avg" else f"_{args.stats_type}"
+    if not args.force and unchanged(df, base / f"players{suffix}_latest.csv"):
+        print("\nNista se nije promenilo od poslednjeg snimka, novi snimak se ne cuva.")
+        sys.exit(0)
     snap = base / "snapshots" / f"players{suffix}_{now:%Y-%m-%d_%H%M}.csv"
     df.to_csv(snap, index=False)
     df.to_csv(base / f"players{suffix}_latest.csv", index=False)

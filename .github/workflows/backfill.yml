@@ -1,0 +1,42 @@
+name: Backfill historical seasons
+
+on:
+  workflow_dispatch:
+    inputs:
+      seasons:
+        description: "Start years of the seasons, separated by spaces (e.g. 2023 2024 2025)"
+        required: true
+        default: "2025"
+
+permissions:
+  contents: write
+
+jobs:
+  backfill:
+    runs-on: ubuntu-latest
+    timeout-minutes: 340
+
+    steps:
+      - uses: actions/checkout@v5
+
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.13"
+          cache: pip
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Collect and commit each season
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          status=0
+          for s in ${{ inputs.seasons }}; do
+            python collector.py --season "$s" || status=1
+            git pull --rebase --autostash
+            git add data/
+            git diff --cached --quiet || git commit -m "Backfill season $s"
+            git push
+          done
+          exit $status
