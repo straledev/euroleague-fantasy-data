@@ -1,0 +1,6 @@
+season,phase,round,game_code,player_id,player,team,opponent,home,starter,minutes,pts,fg2m,fg2a,fg3m,fg3a,ftm,fta,oreb,dreb,reb,ast,stl,tov,blk,blk_against,pf,fd,pir,plus_minus,team_score,opp_score,win,pir_calc,fpt_est
+2025,RS,2,11,P012948,"NEDELJKOVIC, ALEKSEJ",RED,MUN,0,0.0,0.0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0.0,88,97,0,0,0.0
+2025,RS,4,31,P012948,"NEDELJKOVIC, ALEKSEJ",RED,ZAL,1,0.0,0.0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0.0,88,79,1,0,0.0
+2025,RS,5,48,P012948,"NEDELJKOVIC, ALEKSEJ",RED,MAD,1,0.0,0.0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0.0,90,75,1,0,0.0
+2025,RS,15,149,P012948,"NEDELJKOVIC, ALEKSEJ",RED,PAR,0,0.0,0.0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0.0,76,79,0,0,0.0
+2025,RS,16,154,P012948,"NEDELJKOVIC, ALEKSEJ",RED,HTA,0,0.0,0.0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0.0,78,84,0,0,0.0

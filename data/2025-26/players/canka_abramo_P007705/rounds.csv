@@ -1,0 +1,7 @@
+season,phase,round,game_code,player_id,player,team,opponent,home,starter,minutes,pts,fg2m,fg2a,fg3m,fg3a,ftm,fta,oreb,dreb,reb,ast,stl,tov,blk,blk_against,pf,fd,pir,plus_minus,team_score,opp_score,win,pir_calc,fpt_est
+2025,RS,19,190,P007705,"CANKA, ABRAMO",VIR,MIL,1,0.0,0.0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0.0,97,85,1,0,0.0
+2025,RS,23,230,P007705,"CANKA, ABRAMO",VIR,ULK,1,0.0,0.0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0.0,80,85,0,0,0.0
+2025,RS,24,240,P007705,"CANKA, ABRAMO",VIR,RED,1,0.0,0.0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0.0,93,102,0,0,0.0
+2025,RS,25,247,P007705,"CANKA, ABRAMO",VIR,MCO,0,0.0,0.0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0.0,84,82,1,0,0.0
+2025,RS,26,260,P007705,"CANKA, ABRAMO",VIR,ASV,1,0.0,0.0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0.0,70,80,0,0,0.0
+2025,RS,27,270,P007705,"CANKA, ABRAMO",VIR,OLY,0,0.0,0.0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0.0,77,109,0,0,0.0

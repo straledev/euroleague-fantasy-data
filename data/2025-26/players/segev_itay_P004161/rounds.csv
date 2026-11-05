@@ -1,0 +1,4 @@
+season,phase,round,game_code,player_id,player,team,opponent,home,starter,minutes,pts,fg2m,fg2a,fg3m,fg3a,ftm,fta,oreb,dreb,reb,ast,stl,tov,blk,blk_against,pf,fd,pir,plus_minus,team_score,opp_score,win,pir_calc,fpt_est
+2025,RS,12,113,P004161,"SEGEV, ITAY",HTA,MIL,0,0.0,2.9833333333333334,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,2,1,-2,-7.0,105,83,1,-2,-2.2
+2025,RS,13,122,P004161,"SEGEV, ITAY",HTA,MAD,1,0.0,0.0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0.0,74,75,0,0,0.0
+2025,RS,21,205,P004161,"SEGEV, ITAY",HTA,PRS,1,0.0,0.0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0.0,93,82,1,0,0.0

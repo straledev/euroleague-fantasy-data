@@ -1,0 +1,2 @@
+season,phase,round,game_code,player_id,player,team,opponent,home,starter,minutes,pts,fg2m,fg2a,fg3m,fg3a,ftm,fta,oreb,dreb,reb,ast,stl,tov,blk,blk_against,pf,fd,pir,plus_minus,team_score,opp_score,win,pir_calc,fpt_est
+2025,RS,1,7,P006482,"KRAEMER, DAVID",MAD,VIR,0,0.0,10.316666666666666,2,1,2,0,0,0,0,0,1,1,0,1,0,0,0,0,0,3,-1.0,68,74,0,3,3.0

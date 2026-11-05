@@ -1,0 +1,4 @@
+season,phase,round,game_code,player_id,player,team,opponent,home,starter,minutes,pts,fg2m,fg2a,fg3m,fg3a,ftm,fta,oreb,dreb,reb,ast,stl,tov,blk,blk_against,pf,fd,pir,plus_minus,team_score,opp_score,win,pir_calc,fpt_est
+2025,RS,13,122,P009877,"BLAYZER, OZ",HTA,MAD,1,0.0,0.0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0.0,74,75,0,0,0.0
+2025,RS,26,252,P009877,"BLAYZER, OZ",HTA,RED,0,0.0,0.0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0.0,75,87,0,0,0.0
+2025,RS,27,263,P009877,"BLAYZER, OZ",HTA,PAM,1,0.0,0.0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0.0,99,104,0,0,0.0

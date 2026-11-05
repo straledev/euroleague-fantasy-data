@@ -1,0 +1,5 @@
+season,phase,round,game_code,player_id,player,team,opponent,home,starter,minutes,pts,fg2m,fg2a,fg3m,fg3a,ftm,fta,oreb,dreb,reb,ast,stl,tov,blk,blk_against,pf,fd,pir,plus_minus,team_score,opp_score,win,pir_calc,fpt_est
+2025,RS,16,156,P014128,"KUSTURICA, NIKOLA",BAR,PRS,0,0.0,1.1333333333333333,0,0,1,0,0,0,0,0,0,0,0,0,0,0,1,0,0,-2,-4.0,85,69,1,-2,-2.2
+2025,RS,28,275,P014128,"KUSTURICA, NIKOLA",BAR,PRS,1,0.0,0.0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0.0,74,85,0,0,0.0
+2025,RS,32,315,P014128,"KUSTURICA, NIKOLA",BAR,PAM,0,0.0,0.0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0.0,66,62,1,0,0.0
+2025,RS,36,353,P014128,"KUSTURICA, NIKOLA",BAR,PAN,1,0.0,0.0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0.0,79,93,0,0,0.0

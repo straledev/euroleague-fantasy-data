@@ -1,0 +1,2 @@
+season,phase,round,game_code,player_id,player,team,opponent,home,starter,minutes,pts,fg2m,fg2a,fg3m,fg3a,ftm,fta,oreb,dreb,reb,ast,stl,tov,blk,blk_against,pf,fd,pir,plus_minus,team_score,opp_score,win,pir_calc,fpt_est
+2025,RS,1,3,P014029,"EBUKA, IZUNDU",RED,MIL,1,0.0,20.883333333333333,14,7,7,0,0,0,0,2,1,3,1,1,1,0,0,1,1,18,12.0,82,92,0,18,18.0

@@ -1,0 +1,5 @@
+season,phase,round,game_code,player_id,player,team,opponent,home,starter,minutes,pts,fg2m,fg2a,fg3m,fg3a,ftm,fta,oreb,dreb,reb,ast,stl,tov,blk,blk_against,pf,fd,pir,plus_minus,team_score,opp_score,win,pir_calc,fpt_est
+2025,RS,6,60,P004451,"KOUZELOGLOU, IOANNIS",PAN,VIR,0,0.0,2.1666666666666665,0,0,0,0,0,0,0,1,0,1,0,0,1,0,0,0,0,0,-2.0,75,92,0,0,0.0
+2025,RS,8,77,P004451,"KOUZELOGLOU, IOANNIS",PAN,MCO,0,0.0,0.0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0.0,84,92,0,0,0.0
+2025,RS,9,83,P004451,"KOUZELOGLOU, IOANNIS",PAN,RED,0,0.0,11.466666666666667,0,0,0,0,0,0,0,0,2,2,0,1,1,0,0,2,0,0,-11.0,68,86,0,0,0.0
+2025,RS,13,123,P004451,"KOUZELOGLOU, IOANNIS",PAN,PAR,1,0.0,3.283333333333333,0,0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,-4.0,91,69,1,0,0.0

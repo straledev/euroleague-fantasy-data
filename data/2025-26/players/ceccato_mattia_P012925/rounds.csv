@@ -1,0 +1,4 @@
+season,phase,round,game_code,player_id,player,team,opponent,home,starter,minutes,pts,fg2m,fg2a,fg3m,fg3a,ftm,fta,oreb,dreb,reb,ast,stl,tov,blk,blk_against,pf,fd,pir,plus_minus,team_score,opp_score,win,pir_calc,fpt_est
+2025,RS,15,143,P012925,"CECCATO, MATTIA",MIL,PAN,1,0.0,0.0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0.0,96,89,1,0,0.0
+2025,RS,16,152,P012925,"CECCATO, MATTIA",MIL,MAD,1,0.0,0.0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0.0,89,82,1,0,0.0
+2025,RS,29,288,P012925,"CECCATO, MATTIA",MIL,HTA,0,0.0,0.0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0.0,86,92,0,0,0.0
