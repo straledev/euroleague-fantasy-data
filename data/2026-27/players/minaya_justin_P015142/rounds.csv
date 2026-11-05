@@ -1,7 +1,7 @@
-season,phase,round,game_code,player_id,player,team,home,starter,minutes,pts,fg2m,fg2a,fg3m,fg3a,ftm,fta,oreb,dreb,reb,ast,stl,tov,blk,blk_against,pf,fd,pir,plus_minus,pir_calc
-2026,RS,1,4,P015142,"MINAYA, JUSTIN",BAR,1,0.0,13.45,3,0,0,1,1,0,0,0,1,1,1,0,0,0,0,2,1,4,8.0,4
-2026,RS,2,13,P015142,"MINAYA, JUSTIN",BAR,0,1.0,11.35,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,2,0,-1,-8.0,-1
-2026,RS,3,25,P015142,"MINAYA, JUSTIN",BAR,0,1.0,20.5,5,1,1,1,3,0,0,1,3,4,0,2,0,0,0,1,0,8,9.0,8
-2026,RS,7,63,P015142,"MINAYA, JUSTIN",BAR,0,0.0,8.65,1,0,0,0,0,1,2,0,1,1,0,0,0,0,0,3,1,-1,-1.0,-1
-2026,RS,8,74,P015142,"MINAYA, JUSTIN",BAR,0,0.0,8.15,2,1,1,0,0,0,0,1,0,1,0,0,0,0,0,2,0,1,-3.0,1
-2026,RS,9,87,P015142,"MINAYA, JUSTIN",BAR,1,1.0,10.733333333333333,0,0,0,0,0,0,0,1,2,3,0,0,1,0,0,1,0,1,-2.0,1
+season,phase,round,game_code,player_id,player,team,opponent,home,starter,minutes,pts,fg2m,fg2a,fg3m,fg3a,ftm,fta,oreb,dreb,reb,ast,stl,tov,blk,blk_against,pf,fd,pir,plus_minus,team_score,opp_score,win,pir_calc,fpt_est
+2026,RS,1,4,P015142,"MINAYA, JUSTIN",BAR,IST,1,0.0,13.45,3,0,0,1,1,0,0,0,1,1,1,0,0,0,0,2,1,4,8.0,89,82,1,4,4.4
+2026,RS,2,13,P015142,"MINAYA, JUSTIN",BAR,DUB,0,1.0,11.35,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,2,0,-1,-8.0,87,94,0,-1,-1.0
+2026,RS,3,25,P015142,"MINAYA, JUSTIN",BAR,BES,0,1.0,20.5,5,1,1,1,3,0,0,1,3,4,0,2,0,0,0,1,0,8,9.0,95,82,1,8,8.8
+2026,RS,7,63,P015142,"MINAYA, JUSTIN",BAR,MIL,0,0.0,8.65,1,0,0,0,0,1,2,0,1,1,0,0,0,0,0,3,1,-1,-1.0,89,81,1,-1,-1.1
+2026,RS,8,74,P015142,"MINAYA, JUSTIN",BAR,MUN,0,0.0,8.15,2,1,1,0,0,0,0,1,0,1,0,0,0,0,0,2,0,1,-3.0,88,84,1,1,1.1
+2026,RS,9,87,P015142,"MINAYA, JUSTIN",BAR,PAM,1,1.0,10.733333333333333,0,0,0,0,0,0,0,1,2,3,0,0,1,0,0,1,0,1,-2.0,98,94,1,1,1.1

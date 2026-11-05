@@ -1,5 +1,5 @@
-season,phase,round,game_code,player_id,player,team,home,starter,minutes,pts,fg2m,fg2a,fg3m,fg3a,ftm,fta,oreb,dreb,reb,ast,stl,tov,blk,blk_against,pf,fd,pir,plus_minus,pir_calc
-2026,RS,7,67,P012774,"NUNN, KENDRICK",PAN,1,0.0,19.65,11,3,6,1,5,2,2,0,1,1,5,1,3,0,0,1,1,8,-2.0,8
-2026,RS,8,76,P012774,"NUNN, KENDRICK",PAN,1,0.0,22.783333333333335,20,4,6,1,3,9,11,0,2,2,6,0,1,0,0,1,6,26,19.0,26
-2026,RS,9,88,P012774,"NUNN, KENDRICK",PAN,0,1.0,26.216666666666665,17,4,9,2,6,3,3,0,3,3,1,1,3,0,1,2,3,10,-17.0,10
-2026,RS,10,91,P012774,"NUNN, KENDRICK",PAN,0,0.0,23.7,33,8,8,3,5,8,8,0,1,1,1,0,5,0,0,2,5,31,0.0,31
+season,phase,round,game_code,player_id,player,team,opponent,home,starter,minutes,pts,fg2m,fg2a,fg3m,fg3a,ftm,fta,oreb,dreb,reb,ast,stl,tov,blk,blk_against,pf,fd,pir,plus_minus,team_score,opp_score,win,pir_calc,fpt_est
+2026,RS,7,67,P012774,"NUNN, KENDRICK",PAN,BAS,1,0.0,19.65,11,3,6,1,5,2,2,0,1,1,5,1,3,0,0,1,1,8,-2.0,85,79,1,8,8.8
+2026,RS,8,76,P012774,"NUNN, KENDRICK",PAN,MIL,1,0.0,22.783333333333335,20,4,6,1,3,9,11,0,2,2,6,0,1,0,0,1,6,26,19.0,80,75,1,26,28.6
+2026,RS,9,88,P012774,"NUNN, KENDRICK",PAN,IST,0,1.0,26.216666666666665,17,4,9,2,6,3,3,0,3,3,1,1,3,0,1,2,3,10,-17.0,68,83,0,10,10.0
+2026,RS,10,91,P012774,"NUNN, KENDRICK",PAN,MAD,0,0.0,23.7,33,8,8,3,5,8,8,0,1,1,1,0,5,0,0,2,5,31,0.0,115,112,1,31,34.1

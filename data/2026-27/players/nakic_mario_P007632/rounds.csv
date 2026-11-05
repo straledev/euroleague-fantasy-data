@@ -1,6 +1,6 @@
-season,phase,round,game_code,player_id,player,team,home,starter,minutes,pts,fg2m,fg2a,fg3m,fg3a,ftm,fta,oreb,dreb,reb,ast,stl,tov,blk,blk_against,pf,fd,pir,plus_minus,pir_calc
-2026,RS,1,10,P007632,"NAKIC, MARIO",PAR,1,0.0,0.0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0.0,0
-2026,RS,2,18,P007632,"NAKIC, MARIO",PAR,0,0.0,4.333333333333333,0,0,1,0,1,0,0,0,1,1,0,0,0,0,0,1,0,-2,3.0,-2
-2026,RS,3,28,P007632,"NAKIC, MARIO",PAR,0,0.0,9.533333333333333,5,1,1,1,2,0,0,0,1,1,0,1,0,0,0,0,0,6,3.0,6
-2026,RS,4,35,P007632,"NAKIC, MARIO",PAR,0,0.0,6.1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,-11.0,0
-2026,RS,7,66,P007632,"NAKIC, MARIO",PAR,1,0.0,0.0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0.0,0
+season,phase,round,game_code,player_id,player,team,opponent,home,starter,minutes,pts,fg2m,fg2a,fg3m,fg3a,ftm,fta,oreb,dreb,reb,ast,stl,tov,blk,blk_against,pf,fd,pir,plus_minus,team_score,opp_score,win,pir_calc,fpt_est
+2026,RS,1,10,P007632,"NAKIC, MARIO",PAR,MIL,1,0.0,0.0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0.0,92,76,1,0,0.0
+2026,RS,2,18,P007632,"NAKIC, MARIO",PAR,PRS,0,0.0,4.333333333333333,0,0,1,0,1,0,0,0,1,1,0,0,0,0,0,1,0,-2,3.0,92,79,1,-2,-2.2
+2026,RS,3,28,P007632,"NAKIC, MARIO",PAR,MUN,0,0.0,9.533333333333333,5,1,1,1,2,0,0,0,1,1,0,1,0,0,0,0,0,6,3.0,86,84,1,6,6.6
+2026,RS,4,35,P007632,"NAKIC, MARIO",PAR,MAD,0,0.0,6.1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,-11.0,76,86,0,0,0.0
+2026,RS,7,66,P007632,"NAKIC, MARIO",PAR,RED,1,0.0,0.0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0.0,85,82,1,0,0.0

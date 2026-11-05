@@ -65,7 +65,7 @@ PIR = (pts + reb + ast + stl + blk + fd)
 
 **Source:** official EuroLeague API (season results feed). Written by `collector.py` on every run.
 
-**One row =** one game of the season, played or not.
+**One row =** one **played** game. The results feed lists a game only once it has been played, so upcoming games are not in this file.
 
 | Column | Type | Description |
 |---|---|---|
@@ -73,8 +73,13 @@ PIR = (pts + reb + ast + stl + blk + fd)
 | `phase` | str | Competition phase (`RS`, `PI`, `PO`, `FF`) |
 | `round` | int | Round number |
 | `played` | bool | `True` once the game is finished |
-| `home_score` / `away_score` | int | Final score (`0` for games not yet played) |
-| *other columns* | | Every other field the API returns for the game (teams, date, venue...), kept as delivered |
+| `home_score` / `away_score` | int | Final score |
+| `date` | str | Game date as published by the API, e.g. `Sep 24, 2026` |
+| `time` | str | Tip-off time as published by the API, e.g. `20:00` (time zone not stated by the feed) |
+| `gamecode` | str | Season and game in one ID, e.g. `E2026_1` |
+| `group` | str | Competition stage name, e.g. `Regular Season` |
+| `hometeam` / `awayteam` | str | Full team names, e.g. `CRVENA ZVEZDA MERIDIANBET BELGRADE` |
+| `homecode` / `awaycode` | str | EuroLeague team codes, the same codes as `team` in the box score files |
 
 ---
 
