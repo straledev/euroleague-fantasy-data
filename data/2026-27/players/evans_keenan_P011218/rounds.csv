@@ -1,3 +1,4 @@
 season,phase,round,game_code,player_id,player,team,opponent,home,starter,minutes,pts,fg2m,fg2a,fg3m,fg3a,ftm,fta,oreb,dreb,reb,ast,stl,tov,blk,blk_against,pf,fd,pir,plus_minus,team_score,opp_score,win,pir_calc,fpt_est
 2026,RS,8,80,P011218,"EVANS, KEENAN",ZAL,VIR,0,0.0,18.55,4,1,5,0,0,2,4,0,3,3,3,0,0,0,1,4,3,2,4.0,91,74,1,2,2.2
 2026,RS,9,86,P011218,"EVANS, KEENAN",ZAL,PAR,1,0.0,15.866666666666667,6,1,2,0,1,4,4,1,1,2,6,0,2,0,0,1,4,13,7.0,87,80,1,13,14.3
+2026,RS,10,97,P011218,"EVANS, KEENAN",ZAL,BES,0,1.0,17.416666666666668,6,0,3,2,5,0,0,0,1,1,1,0,1,0,0,3,3,1,13.0,83,67,1,1,1.1

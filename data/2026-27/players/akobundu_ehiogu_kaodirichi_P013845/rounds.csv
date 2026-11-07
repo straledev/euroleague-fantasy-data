@@ -1,3 +1,4 @@
 season,phase,round,game_code,player_id,player,team,opponent,home,starter,minutes,pts,fg2m,fg2a,fg3m,fg3a,ftm,fta,oreb,dreb,reb,ast,stl,tov,blk,blk_against,pf,fd,pir,plus_minus,team_score,opp_score,win,pir_calc,fpt_est
 2026,RS,8,80,P013845,"AKOBUNDU-EHIOGU, KAODIRICHI",ZAL,VIR,0,0.0,8.25,0,0,0,0,0,0,0,1,2,3,0,0,0,1,0,1,1,4,1.0,91,74,1,4,4.4
 2026,RS,9,86,P013845,"AKOBUNDU-EHIOGU, KAODIRICHI",ZAL,PAR,1,0.0,9.316666666666666,6,2,3,0,0,2,2,2,1,3,0,0,2,1,1,3,1,4,-4.0,87,80,1,4,4.4
+2026,RS,10,97,P013845,"AKOBUNDU-EHIOGU, KAODIRICHI",ZAL,BES,0,0.0,1.3166666666666667,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,3.0,83,67,1,0,0.0

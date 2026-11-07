@@ -1,2 +1,3 @@
 season,phase,round,game_code,player_id,player,team,opponent,home,starter,minutes,pts,fg2m,fg2a,fg3m,fg3a,ftm,fta,oreb,dreb,reb,ast,stl,tov,blk,blk_against,pf,fd,pir,plus_minus,team_score,opp_score,win,pir_calc,fpt_est
 2026,RS,7,65,P002661,"PREPELIC, KLEMEN",DUB,MUN,0,0.0,0.0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0.0,107,91,1,0,0.0
+2026,RS,10,98,P002661,"PREPELIC, KLEMEN",DUB,VIR,0,0.0,0.0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0.0,93,75,1,0,0.0

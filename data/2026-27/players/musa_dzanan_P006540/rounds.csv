@@ -1,3 +1,4 @@
 season,phase,round,game_code,player_id,player,team,opponent,home,starter,minutes,pts,fg2m,fg2a,fg3m,fg3a,ftm,fta,oreb,dreb,reb,ast,stl,tov,blk,blk_against,pf,fd,pir,plus_minus,team_score,opp_score,win,pir_calc,fpt_est
 2026,RS,8,72,P006540,"MUSA, DZANAN",DUB,PRS,1,0.0,13.8,8,0,2,2,3,2,2,1,0,1,1,0,2,0,1,1,1,4,-4.0,93,99,0,4,4.0
 2026,RS,9,84,P006540,"MUSA, DZANAN",DUB,HTA,1,1.0,16.983333333333334,3,1,1,0,3,1,2,0,2,2,4,0,0,0,0,2,1,4,-2.0,97,83,1,4,4.4
+2026,RS,10,98,P006540,"MUSA, DZANAN",DUB,VIR,0,1.0,18.95,8,0,1,2,3,2,2,0,4,4,5,1,0,0,0,0,2,18,5.0,93,75,1,18,19.8

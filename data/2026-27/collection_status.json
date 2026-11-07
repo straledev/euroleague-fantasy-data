@@ -1,8 +1,8 @@
 {
-  "updated_utc": "2026-11-06 14:32",
-  "played_games": 96,
-  "stored_games": 96,
-  "verified_games": 96,
+  "updated_utc": "2026-11-07 13:28",
+  "played_games": 100,
+  "stored_games": 100,
+  "verified_games": 100,
   "rounds_complete": [
     1,
     2,
@@ -12,7 +12,8 @@
     6,
     7,
     8,
-    9
+    9,
+    10
   ],
   "missing_or_unverified": []
 }
