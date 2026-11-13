@@ -1,3 +1,4 @@
 season,phase,round,game_code,player_id,player,team,opponent,home,starter,minutes,pts,fg2m,fg2a,fg3m,fg3a,ftm,fta,oreb,dreb,reb,ast,stl,tov,blk,blk_against,pf,fd,pir,plus_minus,team_score,opp_score,win,pir_calc,fpt_est
 2026,RS,9,90,P015402,"KONCHAR, JOHN",OLY,MIL,1,0.0,0.0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0.0,84,78,1,0,0.0
 2026,RS,10,100,P015402,"KONCHAR, JOHN",OLY,RED,1,0.0,19.75,0,0,0,0,4,0,0,1,2,3,2,0,1,2,0,3,2,1,6.0,57,62,0,1,1.0
+2026,RS,11,107,P015402,"KONCHAR, JOHN",OLY,DUB,1,0.0,16.816666666666666,0,0,0,0,2,0,0,1,0,1,0,1,0,0,0,3,0,-3,0.0,101,72,1,-3,-3.3

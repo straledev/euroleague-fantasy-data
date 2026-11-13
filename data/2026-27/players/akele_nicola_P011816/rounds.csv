@@ -1,0 +1,2 @@
+season,phase,round,game_code,player_id,player,team,opponent,home,starter,minutes,pts,fg2m,fg2a,fg3m,fg3a,ftm,fta,oreb,dreb,reb,ast,stl,tov,blk,blk_against,pf,fd,pir,plus_minus,team_score,opp_score,win,pir_calc,fpt_est
+2026,RS,11,104,P011816,"AKELE, NICOLA",MIL,ZAL,1,0.0,0.26666666666666666,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2.0,83,86,0,0,0.0

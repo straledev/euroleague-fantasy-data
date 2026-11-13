@@ -1,3 +1,4 @@
 season,phase,round,game_code,player_id,player,team,opponent,home,starter,minutes,pts,fg2m,fg2a,fg3m,fg3a,ftm,fta,oreb,dreb,reb,ast,stl,tov,blk,blk_against,pf,fd,pir,plus_minus,team_score,opp_score,win,pir_calc,fpt_est
 2026,RS,1,2,P006833,"SARR, OLIVIER",MAD,DUB,0,0.0,4.133333333333334,4,1,1,0,0,2,3,1,1,2,0,0,0,0,0,0,2,7,-3.0,77,78,0,7,7.0
 2026,RS,10,91,P006833,"SARR, OLIVIER",MAD,PAN,1,0.0,2.466666666666667,2,0,0,0,1,2,2,1,0,1,0,0,0,0,0,2,1,1,3.0,112,115,0,1,1.0
+2026,RS,11,106,P006833,"SARR, OLIVIER",MAD,RED,1,0.0,22.483333333333334,7,1,1,1,2,2,2,0,1,1,1,4,1,0,0,3,3,11,10.0,105,84,1,11,12.1
