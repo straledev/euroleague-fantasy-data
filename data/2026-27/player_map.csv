@@ -128,7 +128,7 @@ P008829,"PETERS, ALEC",MIL,3820,A. Peters,MIL,Forward,team_and_name,10,225.0
 P001518,"RICCI, GIAMPAOLO",MIL,4012,G. Ricci,MIL,Forward,team_and_name,7,65.6
 P011078,"THOMPSON, DARIUS",MIL,3831,D. Thompson,MIL,Guard,team_and_name,11,198.5
 P012878,"WRIGHT, MOSES",MIL,3843,M. Wright,MIL,Center,team_and_name,11,243.4
-P012597,"BALDWIN, KAMAR",MUN,3917,K. Baldwin,BAY,Guard,team_and_name,5,66.0
+P012597,"BALDWIN, KAMAR",MUN,3917,K. Baldwin,MTA,Guard,name_only,5,66.0
 P014732,"BEAUCHAMP, MARJON",MUN,11503,M. Beauchamp,BAY,Forward,team_and_name,9,176.8
 P011244,"DA SILVA, OSCAR",MUN,3957,O. Da Silva,BAY,Forward,team_and_name,9,157.7
 P001557,"GIFFEY, NIELS",MUN,3986,N. Giffey,BAY,Forward,team_and_name,4,28.4
@@ -263,7 +263,7 @@ P015405,"POWELL, DWIGHT",ULK,13948,D. Powell,FBT,Center,team_and_name,2,26.9
 P002968,"SANLI, SERTAC",ULK,3984,S. Sanli,FBT,Center,team_and_name,9,100.4
 P006896,"SARGIUNAS, IGNAS",ULK,11506,I. Sargiunas,FBT,Guard,team_and_name,8,100.2
 P007831,"SHIELDS, SHAVON",ULK,3775,S. Shields,FBT,Forward,team_and_name,11,265.8
-P014220,"SILVA, CHRIS",ULK,8834,C. Silva,FBT,Center,team_and_name,4,23.2
+P014220,"SILVA, CHRIS",ULK,8834,C. Silva,PAR,Center,name_only,4,23.2
 P014005,"ALSTON JR., DERRICK",VIR,7212,D. Alston Jr.,VIR,Forward,team_and_name,11,239.4
 P006707,"BALDASSO, TOMMASO",VIR,11548,T. Baldasso,VIR,Guard,team_and_name,5,52.8
 P014802,"BELLO, RASHEED",VIR,11543,R. Bello,VIR,Guard,team_and_name,11,147.6
