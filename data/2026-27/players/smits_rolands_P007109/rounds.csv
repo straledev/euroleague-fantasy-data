@@ -1,0 +1,2 @@
+season,phase,round,game_code,player_id,player,team,opponent,home,starter,minutes,pts,fg2m,fg2a,fg3m,fg3a,ftm,fta,oreb,dreb,reb,ast,stl,tov,blk,blk_against,pf,fd,pir,plus_minus,team_score,opp_score,win,pir_calc,fpt_est
+2026,RS,12,114,P007109,"SMITS, ROLANDS",BAS,HTA,1,0.0,15.833333333333334,12,4,5,1,2,1,2,0,3,3,1,1,0,0,0,2,2,14,6.0,82,85,0,14,14.0
