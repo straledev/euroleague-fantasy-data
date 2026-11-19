@@ -45,20 +45,20 @@ P014152,"SIMMONS, KOBI",BAS,8714,K. Simmons,KBA,Guard,team_and_name,11,244.2
 P007109,"SMITS, ROLANDS",BAS,3878,R. Smits,KBA,Center,team_and_name,1,15.8
 P008173,"SPAGNOLO, MATTEO",BAS,3915,M. Spagnolo,KBA,Guard,team_and_name,11,166.1
 P012700,"STEWART, DJ",BAS,4108,D. Stewart,KBA,Guard,team_and_name,12,288.0
-P003091,"BIRSEN, METECAN",BES,4008,M. Birsen,BJK,Forward,team_and_name,8,108.0
-P009025,"BROWN, ANTHONY",BES,4210,A. Brown,BJK,Forward,team_and_name,11,249.4
-P013250,"DEJULIUS, DAVID",BES,11491,D. Dejulius,BJK,Guard,team_and_name,8,138.9
-P013285,"DOTSON, DEVON",BES,4180,D. Dotson,BJK,Guard,team_and_name,9,186.3
-P013383,"GABRIEL, WENYEN",BES,3776,W. Gabriel,BJK,Center,team_and_name,11,179.8
-P014785,"JEFFRIES, DAQUAN",BES,12460,D. Jeffries,BJK,Forward,team_and_name,2,15.8
+P003091,"BIRSEN, METECAN",BES,4008,M. Birsen,BJK,Forward,team_and_name,9,121.2
+P009025,"BROWN, ANTHONY",BES,4210,A. Brown,BJK,Forward,team_and_name,12,257.5
+P013250,"DEJULIUS, DAVID",BES,11491,D. Dejulius,BJK,Guard,team_and_name,9,149.6
+P013285,"DOTSON, DEVON",BES,4180,D. Dotson,BJK,Guard,team_and_name,10,211.6
+P013383,"GABRIEL, WENYEN",BES,3776,W. Gabriel,BJK,Center,team_and_name,12,198.9
+P014785,"JEFFRIES, DAQUAN",BES,12460,D. Jeffries,BJK,Forward,team_and_name,3,40.2
 P005763,"KORKMAZ, FURKAN",BES,3780,F. Korkmaz,BJK,Forward,team_and_name,6,81.5
-P009680,"MORGAN, CONOR",BES,4081,C. Morgan,BJK,Forward,team_and_name,11,217.7
+P009680,"MORGAN, CONOR",BES,4081,C. Morgan,BJK,Forward,team_and_name,12,230.9
 P014786,"NOWELL, JAYLEN",BES,11492,J. Nowell,BJK,Guard,team_and_name,10,216.9
-P014207,"OMORUYI, EUGENE",BES,8808,E. Omoruyi,BJK,Forward,team_and_name,11,209.5
+P014207,"OMORUYI, EUGENE",BES,8808,E. Omoruyi,BJK,Forward,team_and_name,12,233.8
 P003783,"UGURLU, BERK",BES,4088,B. Ugurlu,BJK,Guard,team_and_name,8,103.0
-P013403,"WALKER IV, LONNIE",BES,4688,L. Walker IV,BJK,Guard,team_and_name,4,80.7
-P006661,"WILBEKIN, SCOTTIE",BES,3842,S. Wilbekin,BJK,Guard,team_and_name,11,247.1
-P004554,"ZIZIC, ANTE",BES,3898,A. Zizic,BJK,Center,team_and_name,10,165.6
+P013403,"WALKER IV, LONNIE",BES,4688,L. Walker IV,BJK,Guard,team_and_name,5,104.7
+P006661,"WILBEKIN, SCOTTIE",BES,3842,S. Wilbekin,BJK,Guard,team_and_name,12,274.5
+P004554,"ZIZIC, ANTE",BES,3898,A. Zizic,BJK,Center,team_and_name,11,175.7
 P011286,"BACON, DWAYNE",DUB,7201,D. Bacon,DUB,Forward,team_and_name,12,330.3
 P003458,"BERTANS, DAVIS",DUB,7216,D. Bertans,DUB,Forward,team_and_name,8,91.5
 P011231,"BLOSSOMGAME, JARON",DUB,3907,J. Blossomgame,DUB,Forward,team_and_name,12,208.6
@@ -102,22 +102,22 @@ P003112,"SARIC, DARIO",IST,11487,D. Saric,EFS,Forward,team_and_name,12,312.5
 P008099,"STRAZEL, MATTHEW",IST,3993,M. Strazel,EFS,Guard,team_and_name,12,273.7
 P006372,"YILMAZ, ERKAN",IST,4007,E. Yilmaz,EFS,Forward,team_and_name,3,15.3
 P005368,"YUSTA, SANTI",IST,11488,S. Yusta,EFS,Forward,team_and_name,11,141.5
-P003733,"ABALDE, ALBERTO",MAD,3991,A. Abalde,RMB,Forward,team_and_name,11,200.5
+P003733,"ABALDE, ALBERTO",MAD,3991,A. Abalde,RMB,Forward,team_and_name,12,225.3
 P005928,"CAMPAZZO, FACUNDO",MAD,3772,F. Campazzo,RMB,Guard,team_and_name,9,179.5
 P009005,"DECK, GABRIEL",MAD,3803,G. Deck,RMB,Forward,team_and_name,3,51.3
-P011247,"FELIZ, ANDRES",MAD,3851,A. Feliz,RMB,Guard,team_and_name,11,239.3
+P011247,"FELIZ, ANDRES",MAD,3851,A. Feliz,RMB,Guard,team_and_name,12,264.3
 P012613,"JANTUNEN, MIKAEL",MAD,3869,M. Jantunen,RMB,Forward,team_and_name,9,157.8
-P015103,"JONES, DAMIAN",MAD,11536,D. Jones,RMB,Center,team_and_name,11,138.3
+P015103,"JONES, DAMIAN",MAD,11536,D. Jones,RMB,Center,team_and_name,12,148.4
 PTGB,"LLULL, SERGIO",MAD,3977,S. Llull,RMB,Guard,team_and_name,2,35.8
-P012080,"LUWAWU-CABARROT, TIMOTHE",MAD,3864,T. Luwawu-Cabarrot,RMB,Forward,team_and_name,11,199.3
-P007027,"MALEDON, THEO",MAD,3850,T. Maledon,RMB,Guard,team_and_name,9,208.8
-P014006,"OKEKE, CHUMA",MAD,7194,C. Okeke,RMB,Forward,team_and_name,10,181.7
-P010393,"PRADILLA, JAIME",MAD,4257,J. Pradilla,RMB,Forward,team_and_name,11,158.0
-P008384,"PROCIDA, GABRIELE",MAD,3916,G. Procida,RMB,Forward,team_and_name,7,93.5
-P006833,"SARR, OLIVIER",MAD,11534,O. Sarr,RMB,Center,team_and_name,3,29.1
+P012080,"LUWAWU-CABARROT, TIMOTHE",MAD,3864,T. Luwawu-Cabarrot,RMB,Forward,team_and_name,12,220.8
+P007027,"MALEDON, THEO",MAD,3850,T. Maledon,RMB,Guard,team_and_name,10,233.4
+P014006,"OKEKE, CHUMA",MAD,7194,C. Okeke,RMB,Forward,team_and_name,11,196.8
+P010393,"PRADILLA, JAIME",MAD,4257,J. Pradilla,RMB,Forward,team_and_name,12,177.3
+P008384,"PROCIDA, GABRIELE",MAD,3916,G. Procida,RMB,Forward,team_and_name,8,101.5
+P006833,"SARR, OLIVIER",MAD,11534,O. Sarr,RMB,Center,team_and_name,4,37.7
 P015102,"SHULGA, MAKSYM",MAD,11535,M. Shulga,RMB,Guard,team_and_name,3,17.7
-P015244,"SMITH JR, NICK",MAD,12145,N. Smith Jr,RMB,Guard,team_and_name,8,106.4
-P005791,"TAVARES, WALTER",MAD,3769,W. Tavares,RMB,Center,team_and_name,11,227.9
+P015244,"SMITH JR, NICK",MAD,12145,N. Smith Jr,RMB,Guard,team_and_name,9,122.7
+P005791,"TAVARES, WALTER",MAD,3769,W. Tavares,RMB,Center,team_and_name,12,254.8
 P011816,"AKELE, NICOLA",MIL,4016,N. Akele,MIL,Forward,team_and_name,1,0.3
 P008985,"BOLMARO, LEANDRO",MIL,3881,L. Bolmaro,MIL,Guard,team_and_name,12,276.3
 P007056,"BOOKER, DEVIN",MIL,3860,D. Booker,MIL,Center,team_and_name,9,140.3
