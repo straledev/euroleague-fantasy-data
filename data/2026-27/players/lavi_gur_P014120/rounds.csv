@@ -1,0 +1,2 @@
+season,phase,round,game_code,player_id,player,team,opponent,home,starter,minutes,pts,fg2m,fg2a,fg3m,fg3a,ftm,fta,oreb,dreb,reb,ast,stl,tov,blk,blk_against,pf,fd,pir,plus_minus,team_score,opp_score,win,pir_calc,fpt_est
+2026,RS,14,134,P014120,"LAVI, GUR",TEL,MUN,0,0.0,7.75,4,2,2,0,0,0,0,1,1,2,0,0,0,0,0,1,0,5,2.0,87,79,1,5,5.5

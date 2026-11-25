@@ -1,0 +1,2 @@
+season,phase,round,game_code,player_id,player,team,opponent,home,starter,minutes,pts,fg2m,fg2a,fg3m,fg3a,ftm,fta,oreb,dreb,reb,ast,stl,tov,blk,blk_against,pf,fd,pir,plus_minus,team_score,opp_score,win,pir_calc,fpt_est
+2026,RS,14,131,P003527,"ABASS, AWUDU",VIR,RED,0,0.0,9.183333333333334,4,1,2,0,0,2,2,1,0,1,0,0,0,0,0,2,1,3,3.0,108,84,1,3,3.3
